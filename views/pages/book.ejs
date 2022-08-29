@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <!-- Page Loader -->
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+
+    <%- include('../partials/nav'); %>
+
+    <div class="container-fluid tm-container-content tm-mt-60">
+      <div class="row mb-4">
+        <h2 class="col-12 tm-text-primary"><%= bookInfo[0].title %></h2>
+        <h3><%= bookInfo[0].year %></h3>
+      </div>
+
+      <div class="row tm-mb-90">
+        <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
+          <img
+            src="/img/<%= bookInfo[0].title + '.png'%>"
+            alt=""
+            width="360px"
+            height="auto"
+          />
+        </div>
+      </div>
+      <div class="row mb-4">
+        <h2 class="col-12 tm-text-primary">
+           <a href="/pdf/<%= bookInfo[0].title + '.pdf' %>">Read here <i class="far fa-file-pdf"></i></a>
+        </h2>
+        <h2 class="col-12 tm-text-primary">
+          written by <%= bookInfo[0].author_name %>
+        </h2>
+    
+      </div>
+        <button type="button" class="btn btn-primary">
+          <a
+            href="http://localhost:8000/authors/specific?id=<%= bookInfo[0].aid %>"
+          />
+          More about author
+        </button>
+    </div>
+
+    <footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
+      <div class="container-fluid tm-container-small"></div>
+    </footer>
+
+    <script src="js/plugins.js"></script>
+    <script>
+      $(window).on('load', function () {
+        $('body').addClass('loaded');
+      });
+    </script>
+  </body>
+</html>

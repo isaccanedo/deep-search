@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <!-- Page Loader -->
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+
+    <%- include('../partials/nav'); %>
+
+    <ul class="list-group">
+      <% for(let i=0;i<sresults.length;i++) {%>
+         <%- include('../partials/listsearchresults',{data:sresults[i]}); %>
+         <% } %>
+    </ul>
+
+    <footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
+      <div class="container-fluid tm-container-small"></div>
+    </footer>
+
+    <script src="js/plugins.js"></script>
+    <script>
+      $(window).on('load', function () {
+        $('body').addClass('loaded');
+      });
+    </script>
+  </body>
+</html>

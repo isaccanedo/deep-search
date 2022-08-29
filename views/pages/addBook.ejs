@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <!-- Page Loader -->
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+
+    <%- include('../partials/nav'); %>
+    
+
+    <div class="container-fluid tm-mt-60">
+        <div class="row tm-mb-50">
+            <div class="col-lg-4 col-12 mb-5">
+                <h2 class="tm-text-primary mb-5">Add Book</h2>
+                <form id="contact-form" action="http://localhost:8000/books/all" method="POST" enctype="multipart/form-data" class="tm-contact-form mx-auto">
+                    <div class="form-group">
+                        <label>Book Title</label>
+                        <input type="text" name="bookTitle" class="form-control rounded-0" placeholder="Book Title" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Author</label>
+                        <input type="text" name="authorName" class="form-control rounded-0" placeholder="Author Name" required />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Total Number of pages</label>
+                        <input type="number" name="noPages" class="form-control rounded-0" placeholder="Total Number of pages" required />
+                    </div>
+
+    
+                    <div class="form-group">
+                        <label for="Year">Released Year</label>
+                        <input type="number" id="Year" name="rYear" min="1500" max="2100">
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label >Belongs to Era:</label>
+                        <select class="form-control" id="Era" name="era">
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                        </select>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="bpic">Upload Image of the Book:</label>
+                        <input type="file" id="bpic" name="bookPic">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bpic">Upload pdf of the Book:</label>
+                        <input type="file" id="bpdf" name="bookPdf">
+                    </div>
+                 
+                    <div class="form-group tm-text-right">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>                
+            </div>
+            
+        </div>
+        
+
+    
+    <script src="js/plugins.js"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+    </script>
+</body>
+</html>
